@@ -98,10 +98,6 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:/home/fel/.spicetify
 
@@ -114,6 +110,15 @@ alias cls='clear'
 alias h='history'
 
 alias srczsh='source ~/.zshrc'
+alias zshconf='nvim ~/.zshrc'
+alias nvimconf='nvim ~/.config/nvim'
+alias kittyconf='nvim ~/.config/kitty'
+
+
 alias spotify='flatpak run com.spotify.Client &>/dev/null & disown'
+alias reload="kill -SIGUSR1 $(pgrep -x kitty)"
 
 eval $(thefuck --alias)
+alias f='fuck'
+
+export EDITOR=nvim
