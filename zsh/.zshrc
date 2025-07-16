@@ -115,3 +115,5 @@ alias h='history'
 
 alias srczsh='source ~/.zshrc'
 alias spotify='flatpak run com.spotify.Client &>/dev/null & disown'
+
+eval $(thefuck --alias)
