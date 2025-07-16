@@ -5,6 +5,7 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qq", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>Q", "ZQ", { noremap = true, silent = true })
 
 
@@ -23,8 +24,12 @@ vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { noremap = true, silent = true
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { noremap = true, silent = true })
 
 
---undo-redo
-vim.keymap.set("n", "<leader>u", ":undo<CR>", { noremap = true, silent = true })
+--redo
 vim.keymap.set("n", "<leader>r", ":redo<CR>", { noremap = true, silent = true })
 
+--terminal
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>h", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { noremap = true, silent = true })
