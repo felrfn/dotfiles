@@ -14,6 +14,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+-- vim.cmd('highlight Normal guibg=NONE')
+-- vim.cmd('highlight NonText guibg=NONE')
+-- vim.cmd('highlight SignColumn guibg=NONE')
+-- vim.cmd('highlight StatusLine guibg=NONE')
+
+
 local opts = {}
 
 require("config.keymaps")
