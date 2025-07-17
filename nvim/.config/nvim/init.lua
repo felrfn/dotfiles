@@ -20,6 +20,10 @@ vim.opt.rtp:prepend(lazypath)
 -- vim.cmd('highlight SignColumn guibg=NONE')
 -- vim.cmd('highlight StatusLine guibg=NONE')
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  command = "setlocal tabstop=2 shiftwidth=2 expandtab",
+})
 
 local opts = {}
 
