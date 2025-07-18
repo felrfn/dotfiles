@@ -122,3 +122,9 @@ eval $(thefuck --alias)
 alias f='fuck'
 
 export EDITOR=nvim
+export TERMINAL=kitty
+
+fpath=(~/ $fpath)
+
+autoload -Uz compinit
+compinit
