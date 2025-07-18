@@ -101,6 +101,11 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/home/fel/.spicetify
 
+# golang
+export GOPATH=$(go env GOPATH)
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
 #aliases
 alias ll='ls -l'
 alias la='ls -a'
