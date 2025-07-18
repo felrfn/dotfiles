@@ -99,6 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
+
+eval "$(starship init zsh)"
+
 export PATH=$PATH:/home/fel/.spicetify
 
 # golang
