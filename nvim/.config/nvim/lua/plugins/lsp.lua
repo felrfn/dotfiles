@@ -14,8 +14,8 @@ return {
           settings = { update_in_insert =true, }
         })
 
+        require('config.diagnostic').setup()
 
-        vim.diagnostic.config({ virtual_text = true })
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
         vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
