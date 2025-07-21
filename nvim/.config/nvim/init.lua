@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -13,7 +13,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
-
 
 -- vim.cmd('highlight Normal guibg=NONE')
 -- vim.cmd('highlight NonText guibg=NONE')
@@ -25,7 +24,16 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal tabstop=2 shiftwidth=2 expandtab",
 })
 
-local opts = {}
+--
+local modules = {
+  "options",
+  "keymaps",
+  "diagnostic",
+}
 
-require("config.keymaps")
+for _, m in ipairs(modules) do
+  require("config." .. m)
+end
+--
+
 require("lazy").setup("plugins")
