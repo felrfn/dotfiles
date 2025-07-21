@@ -1,27 +1,32 @@
-
-
 local M = {}
 
 function M.setup()
   vim.diagnostic.config({
-    virtual_text = true, --sejak ke berapa gitu virtual_text itu secara default jadi false makanya perlu diatur secara manual
+
+    underline = false,
     signs = {
-      enable = true,
+      active = true,
       text = {
         [vim.diagnostic.severity.ERROR] = "✘",
-        [vim.diagnostic.severity.WARN]  = "⚠",
-        [vim.diagnostic.severity.INFO]  = "ℹ",
-        [vim.diagnostic.severity.HINT]  = "💡",
+        [vim.diagnostic.severity.WARN] = "",
+        [vim.diagnostic.severity.HINT] = "󰟃",
+        [vim.diagnostic.severity.INFO] = "",
       },
     },
+    virtual_text = true,
     update_in_insert = true,
-    severity_sort = true,
     float = {
       border = "rounded",
+      format = function(diagnostic)
+        return string.format(
+          "%s (%s) [%s]",
+          diagnostic.message,
+          diagnostic.source,
+          diagnostic.code or diagnostic.user_data.lsp.code
+        )
+      end,
     },
   })
 end
 
 return M
-
-
