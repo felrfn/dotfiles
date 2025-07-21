@@ -125,6 +125,7 @@ alias kittyconf='nvim ~/.config/kitty'
 
 alias spotify='flatpak run com.spotify.Client &>/dev/null & disown'
 alias reload="kill -SIGUSR1 $(pgrep -x kitty)"
+alias hi='fastfetch'
 
 eval $(thefuck --alias)
 alias f='fuck'
