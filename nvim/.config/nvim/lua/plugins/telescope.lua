@@ -20,6 +20,13 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
       vim.keymap.set("n", "<C-p>", require("telescope").extensions.project.project, { desc = "Find projects" })
 
+      vim.api.nvim_create_user_command("TelescopeProjects", function()
+        telescope.load_extension("project")
+        telescope.extensions.project.project()
+      end, {
+        desc = "Open Telescope Projects",
+      })
+
       telescope.setup({
         defaults = {
           mappings = {
@@ -31,9 +38,8 @@ return {
         extensions = {
           project = {
             base_dirs = {
-              "~/dev",
               "~/git",
-              "~/project",
+              "~/projects",
               "~/.config/nvim",
             },
             hidden_files = true,
@@ -43,7 +49,15 @@ return {
             sync_with_nvim_tree = true,
             on_project_selected = function(prompt_bufnr)
               project_actions.change_working_directory(prompt_bufnr, false)
+              -- force close alpha-nvim buffer
+              for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+                if vim.bo[bufnr].filetype == "alpha" then
+                  vim.api.nvim_buf_delete(bufnr, { force = true })
+                  break
+                end
+              end
               -- require("harpoon.ui").nav_file(1)
+              require("neo-tree.command").execute({ toggle = false, dir = vim.fn.getcwd() })
             end,
             mappings = {
               n = {

@@ -9,18 +9,19 @@ return {
     {
       "neovim/nvim-lspconfig",
       config = function()
-        require 'lspconfig'.lua_ls.setup({})
-        require 'lspconfig'.gopls.setup({})
-        require 'lspconfig'.ts_ls.setup({
-          -- settings = { update_in_insert =true, }
-        })
+        require("lspconfig").lua_ls.setup({})
+        require("lspconfig").gopls.setup({})
+        require("lspconfig").ts_ls.setup({})
+        require("lspconfig").pyright.setup({})
+        require("lspconfig").intelephense.setup({})
+        require("lspconfig").jdtls.setup({})
 
         require("config.diagnostic").setup()
 
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-        vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
-      end
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+      end,
     },
-  }
+  },
 }
