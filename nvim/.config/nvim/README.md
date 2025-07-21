@@ -50,7 +50,7 @@ A modern, modular Neovim setup powered by **LazyVim**, designed for productivity
 
 ## 📚 Keybindings
 
-See [Keybindings Cheatsheet](./KEYBINDINGS.md) for a complete list of custom shortcuts.
+See [Keybindings Cheatsheet](./cheatsheet.md) for a complete list of custom shortcuts.
 
 Examples:
 
