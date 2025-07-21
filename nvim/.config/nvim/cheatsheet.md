@@ -1,5 +1,6 @@
 # ⌨️ Keymaps
 **Reference**: [LazyVim default keymaps](https://www.lazyvim.org/keymaps) 
+
 The `<leader>` key is set to `space`
 
 
