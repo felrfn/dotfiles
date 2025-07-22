@@ -142,3 +142,17 @@
 | `<C-e>`      | i    | Abort completion                      |
 | `<CR>`       | i    | Confirm selection (auto-select item)  |
 
+---
+
+## DAP Keybindings
+
+| Key          | Mode | Description             |
+|--------------|------|-------------------------|
+| `<Leader>dt` | n    | Toggle breakpoint       |
+| `<Leader>dc` | n    | Continue execution      |
+| `<Leader>dn` | n    | Step over               |
+| `<Leader>di` | n    | Step into               |
+| `<Leader>do` | n    | Step out                |
+| `<Leader>dq` | n    | Terminate debugging     |
+
+---

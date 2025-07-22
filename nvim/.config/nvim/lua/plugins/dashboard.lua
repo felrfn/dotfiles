@@ -33,7 +33,7 @@ return {
       local footer_datetime = os.date("  %m-%d-%Y   %H:%M:%S")
       local version = vim.version()
       local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
-      local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+      -- local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
       local value = footer_datetime .. "   Plugins " .. total_plugins .. nvim_version_info
       return value
     end
