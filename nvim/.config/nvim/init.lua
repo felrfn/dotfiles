@@ -14,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---
+
 local modules = {
   "options",
   "keymaps",
@@ -24,6 +24,6 @@ local modules = {
 for _, m in ipairs(modules) do
   require("config." .. m)
 end
---
+
 
 require("lazy").setup("plugins")
