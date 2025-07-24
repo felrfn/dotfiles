@@ -6,6 +6,7 @@ function M.setup()
     underline = false,
     signs = {
       active = true,
+      priority = 20,
       text = {
         [vim.diagnostic.severity.ERROR] = "✘",
         [vim.diagnostic.severity.WARN] = "",

@@ -22,6 +22,8 @@ opt.scrolloff = 8
 opt.mouse = "a"
 opt.linebreak = true
 
+vim.o.autoread = true
+vim.bo.autoread = true
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
 

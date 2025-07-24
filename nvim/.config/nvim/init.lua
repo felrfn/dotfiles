@@ -15,15 +15,21 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-local modules = {
-  "options",
-  "keymaps",
-  "diagnostic",
-}
+-- local modules = {
+--   "options",
+--   "keymaps",
+--   "diagnostic",
+-- }
+--
+-- for _, m in ipairs(modules) do
+--   require("config." .. m)
+-- end
 
-for _, m in ipairs(modules) do
-  require("config." .. m)
+local configs = vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/config")
+for _, conf in ipairs(configs) do
+  if conf:match("%.lua$") then
+    require("config." .. conf:gsub("%.lua$", ""))
+  end
 end
-
 
 require("lazy").setup("plugins")

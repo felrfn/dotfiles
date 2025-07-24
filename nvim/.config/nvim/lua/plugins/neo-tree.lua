@@ -9,6 +9,7 @@ return {
 	lazy = false,
 	config = function()
 		local neo_tree = require("neo-tree")
+		local icon = require("utils.icons").icons.git
 
 		neo_tree.setup({
 			filesystem = {
@@ -17,10 +18,25 @@ return {
 					visible = true,
 				},
 			},
+			default_component_configs = {
+				git_status = {
+					symbols = {
+						added = icon.add_square,
+						modified = icon.modified,
+						deleted = icon.delete_square,
+						renamed = icon.renamed,
+						untracked = icon.untracked,
+						ignored = icon.ignored,
+						unstaged = icon.unstaged,
+						staged = icon.staged,
+						conflict = icon.conflict,
+					},
+				},
+			},
 			window = {
-				position = "left",
+				position = "float",
 			},
 		})
-		vim.keymap.set("n", "<leader>n", ":Neotree toggle <CR>", {})
+		vim.keymap.set("n", "<leader>n", ":Neotree toggle left <CR>", {})
 	end,
 }
