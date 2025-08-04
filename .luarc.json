@@ -2,5 +2,6 @@
     "diagnostics.globals": [
         "vim",
         "asu"
-    ]
+    ],
+    "runtime.unicodeName": true
 }

@@ -1,10 +1,10 @@
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
-	command = "checktime",
+  command = "checktime",
 })
 
 -- colorscheme, theme
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	command = "colorscheme kanagawa",
+  command = "colorscheme kanagawa",
 })
 vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
   callback = function()

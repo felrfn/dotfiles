@@ -126,6 +126,7 @@ alias kittyconf='nvim ~/.config/kitty'
 alias spotify='flatpak run com.spotify.Client &>/dev/null & disown'
 alias reload="kill -SIGUSR1 $(pgrep -x kitty)"
 alias hi='fastfetch'
+alias vi='nvim'
 
 eval $(thefuck --alias)
 alias f='fuck'
@@ -133,7 +134,20 @@ alias f='fuck'
 export EDITOR=nvim
 export TERMINAL=kitty
 
+export PNPM_HOME="$HOME/.local/share/pnpm/global"
+export PATH="$PNPM_HOME:$PATH"
+
 fpath=(~/ $fpath)
 
 autoload -Uz compinit
 compinit
+
+hi
+
+# pnpm
+export PNPM_HOME="/home/fel/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
