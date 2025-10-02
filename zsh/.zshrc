@@ -137,12 +137,19 @@ export TERMINAL=kitty
 export PNPM_HOME="$HOME/.local/share/pnpm/global"
 export PATH="$PNPM_HOME:$PATH"
 
+
+export PATH="$PATH:$HOME/libs/flutter/flutter/bin"
+
 fpath=(~/ $fpath)
 
 autoload -Uz compinit
 compinit
 
-hi
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/tools"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # pnpm
 export PNPM_HOME="/home/fel/.local/share/pnpm"
@@ -154,3 +161,6 @@ esac
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
+
+hi
+
