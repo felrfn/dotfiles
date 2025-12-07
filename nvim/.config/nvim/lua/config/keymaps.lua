@@ -33,7 +33,14 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
+-- copilot
+-- vim.g.copilot_no_tab_map = true
+-- vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<S-Tab>")', { expr = true, replace_keycodes = false })
+vim.keymap.set({'n', 'v'}, "<leader>cc", ":CopilotChatOpen<CR>", { noremap = true, silent = true })
+vim.keymap.set({'n', 'v'}, "<leader>cm", ":CopilotChatModels<CR>", { noremap = true, silent = true })
+vim.keymap.set({'n', 'v'}, "<leader>cv", ":CopilotChatToggle<CR>", { noremap = true, silent = true })
 
 -- other
 vim.keymap.set('n', '<leader>o', ':normal o<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>O', ':normal O<CR>', { noremap = true, silent = true })
+ 
