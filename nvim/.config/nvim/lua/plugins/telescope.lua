@@ -1,11 +1,12 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
+    tag = "v0.2.0",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-project.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
+
     },
     config = function()
       local telescope = require("telescope")
@@ -29,10 +30,28 @@ return {
 
       telescope.setup({
         defaults = {
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "--glob",
+            "!**/.git/*",
+          },
           mappings = {
             n = {
               ["<leader><leader>"] = actions.close,
             },
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true,
+            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
           },
         },
         extensions = {
