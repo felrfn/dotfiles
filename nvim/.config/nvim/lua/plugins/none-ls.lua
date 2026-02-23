@@ -14,6 +14,7 @@ return {
 
 				-- js
 				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.htmlbeautifier,
 
 				-- py
 				null_ls.builtins.formatting.isort,
@@ -22,6 +23,10 @@ return {
 				--go
 				null_ls.builtins.formatting.goimports,
 				-- null_ls.builtins.diagnostics.golangci_lint,
+
+				null_ls.builtins.formatting.sqlfluff,
+				require("none-ls.formatting.beautysh"),
+				null_ls.builtins.formatting.yamlfix,
 			},
 		})
 		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format)
